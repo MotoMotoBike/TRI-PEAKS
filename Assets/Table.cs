@@ -49,5 +49,16 @@ public class Table
         }
     }
 
+    public bool TryToTakeCard(int row, int index)
+    {
+        if (_rows[row][index].IsOpen)
+        {
+            _rows[row][index].IsTaken = true;
+            return true;
+        }
+
+        return false;
+    }
+
     public List<List<PyramidCard>> GetRows() => _rows;
 }
